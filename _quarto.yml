@@ -1,0 +1,15 @@
+project: 
+  type: website
+
+website: 
+  title: "Hello Quarto - Duke CCT"
+  navbar: 
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Presentation
+        href: presentation.qmd
+      - href: about.qmd
+
+execute: 
+  freeze: auto

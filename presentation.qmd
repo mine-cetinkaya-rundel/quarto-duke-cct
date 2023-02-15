@@ -1,7 +1,7 @@
 ---
 title: "Hello, Quarto!"
 author: "Mine Çetinkaya-Rundel"
-format: html
+format: revealjs
 editor: visual
 bibliography: references.bib
 execute:
@@ -38,6 +38,8 @@ glimpse(penguins)
 #| fig-cap: Bar plot of species of penguins.
 #| fig-width: 5
 #| fig-asp: 0.618
+#| output-location: column-fragment
+#| code-line-numbers: "|6|7-10"
 
 ggplot(
   penguins, 

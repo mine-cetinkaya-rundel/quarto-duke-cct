@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "presentation.html#data",
+    "href": "presentation.html#data",
+    "title": "Hello, Quarto!",
+    "section": "Data",
+    "text": "Data\nFor this analysis we’ll use the penguins dataset from the palmerpenguins package.(Gorman, Williams, and Fraser 2014)\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nlibrary(gt)\n\n\nglimpse(penguins)\n\nRows: 344\nColumns: 8\n$ species           <fct> Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            <fct> Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    <dbl> 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     <dbl> 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm <int> 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       <int> 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               <fct> male, female, female, NA, female, male, female, male…\n$ year              <int> 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+  },
+  {
+    "objectID": "presentation.html#species",
+    "href": "presentation.html#species",
+    "title": "Hello, Quarto!",
+    "section": "Species",
+    "text": "Species\nFigure 1 is a bar plot of species of penguins.\n\n\nggplot(\n  penguins, \n  aes(x = species)\n) +\n  geom_bar() +\n  theme_minimal() +\n  labs(\n    x = \"Species\",\n    y = \"Count\"\n  )\n\n\n\n\n\nFigure 1: Bar plot of species of penguins."
+  },
+  {
+    "objectID": "presentation.html#penguins",
+    "href": "presentation.html#penguins",
+    "title": "Hello, Quarto!",
+    "section": "Penguins",
+    "text": "Penguins\nTable 1 shows the first 10 penguins from the dataset.\n\n\nCode\npenguins |>\n  slice_head(n = 10) |>\n  select(species, island, bill_length_mm, bill_depth_mm) |>\n  gt()\n\n\n\n\n\n\nTable 1:  First 10 penguins from the dataset. \n  \n  \n    \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n    \n  \n  \n    Adelie\nTorgersen\n39.1\n18.7\n    Adelie\nTorgersen\n39.5\n17.4\n    Adelie\nTorgersen\n40.3\n18.0\n    Adelie\nTorgersen\nNA\nNA\n    Adelie\nTorgersen\n36.7\n19.3\n    Adelie\nTorgersen\n39.3\n20.6\n    Adelie\nTorgersen\n38.9\n17.8\n    Adelie\nTorgersen\n39.2\n19.6\n    Adelie\nTorgersen\n34.1\n18.1\n    Adelie\nTorgersen\n42.0\n20.2"
+  },
+  {
+    "objectID": "presentation.html#modeling-results",
+    "href": "presentation.html#modeling-results",
+    "title": "Hello, Quarto!",
+    "section": "Modeling results",
+    "text": "Modeling results\n…"
+  },
+  {
+    "objectID": "presentation.html#references",
+    "href": "presentation.html#references",
+    "title": "Hello, Quarto!",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nGorman, Kristen B., Tony D. Williams, and William R. Fraser. 2014. “Ecological Sexual Dimorphism and Environmental Variability Within a Community of Antarctic Penguins (Genus Pygoscelis).” Edited by André Chiaradia. PLoS ONE 9 (3): e90081. https://doi.org/10.1371/journal.pone.0090081."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hello, Quarto!",
+    "section": "",
+    "text": "For this analysis we’ll use the penguins dataset from the palmerpenguins package.(Gorman, Williams, and Fraser 2014)\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\nlibrary(gt)\n\n\nglimpse(penguins)\n\nRows: 344\nColumns: 8\n$ species           <fct> Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            <fct> Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    <dbl> 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     <dbl> 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm <int> 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       <int> 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               <fct> male, female, female, NA, female, male, female, male…\n$ year              <int> 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\n\n\n\n\nFigure 1 is a bar plot of species of penguins.\n\nggplot(\n  penguins, \n  aes(x = species)\n) +\n  geom_bar() +\n  theme_minimal() +\n  labs(\n    x = \"Species\",\n    y = \"Count\"\n  )\n\n\n\n\nFigure 1: Bar plot of species of penguins.\n\n\n\n\n\n\n\nTable 1 shows the first 10 penguins from the dataset.\n\n\nCode\npenguins |>\n  slice_head(n = 10) |>\n  select(species, island, bill_length_mm, bill_depth_mm) |>\n  gt()\n\n\n\n\n\n\nTable 1:  First 10 penguins from the dataset. \n  \n  \n    \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n    \n  \n  \n    Adelie\nTorgersen\n39.1\n18.7\n    Adelie\nTorgersen\n39.5\n17.4\n    Adelie\nTorgersen\n40.3\n18.0\n    Adelie\nTorgersen\nNA\nNA\n    Adelie\nTorgersen\n36.7\n19.3\n    Adelie\nTorgersen\n39.3\n20.6\n    Adelie\nTorgersen\n38.9\n17.8\n    Adelie\nTorgersen\n39.2\n19.6\n    Adelie\nTorgersen\n34.1\n18.1\n    Adelie\nTorgersen\n42.0\n20.2"
+  },
+  {
+    "objectID": "index.html#modeling-results",
+    "href": "index.html#modeling-results",
+    "title": "Hello, Quarto!",
+    "section": "Modeling results",
+    "text": "Modeling results\n…"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This was created during a Duke CCT Learning Experience on Feb 15, 2023."
+  }
+]
