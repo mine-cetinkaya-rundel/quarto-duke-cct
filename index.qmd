@@ -3,18 +3,54 @@ title: "Hello, Quarto!"
 author: "Mine Çetinkaya-Rundel"
 format: html
 editor: visual
-execute:
-  echo: false
+bibliography: references.bib
 ---
 
 ## Data
 
-Say **something** *about* [the]{.underline} `dataset` I'll use...
+For this analysis we'll use the `penguins` dataset from the [**palmerpenguins**](https://allisonhorst.github.io/palmerpenguins/) package.[@gorman2014]
+
+```{r}
+#| label: load-packages
+#| message: false
+
+library(tidyverse)
+library(palmerpenguins)
+library(gt)
+```
+
+```{r}
+#| label: glimpse-data
+
+glimpse(penguins)
+```
 
 ## Species
 
-...
+@fig-barplot-species is a bar plot of species of penguins.
+
+```{r}
+#| label: fig-barplot-species
+#| fig-cap: Bar plot of species of penguins.
+#| fig-width: 5
+#| fig-asp: 0.618
+#| echo: fenced
+
+ggplot(penguins, aes(x = species)) +
+  geom_bar()
+```
 
 ## Penguins
 
-...
+@tbl-penguins shows the first 10 penguins from the dataset.
+
+```{r}
+#| label: tbl-penguins
+#| tbl-cap: First 10 penguins from the dataset.
+#| code-fold: true
+
+penguins |>
+  slice_head(n = 10) |>
+  select(species, island, bill_length_mm, bill_depth_mm) |>
+  gt()
+```
